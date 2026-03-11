@@ -182,13 +182,23 @@ body {
 
 
 @media (max-width: 480px) {
-    .eid-title {
-        font-size: 2rem; 
-    }
     .card {
-        padding: 30px 20px;
+        width: 95% !important; 
+        padding: 20px 15px !important;
     }
-    .phone-number {
-        font-size: 1.4rem;
+    .eid-title { font-size: 1.8rem !important; }
+    .phone-number { font-size: 1.2rem !important; }
+    .mosque-png-art { height: 120px !important; } 
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .card {
+        width: 360px !important;
+    }
+    .mosque-png-art { height: 140px !important; }
+}
+
+@media (min-width: 769px) {
+    .card {
+        width: 420px !important;
     }
 }
