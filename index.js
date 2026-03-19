@@ -1,24 +1,17 @@
-const copyNum = document.getElementById('copyNum');
-const toast = document.getElementById('toast');
+document.getElementById('copyNum').addEventListener('click', function () {
+    const num = this.innerText;
 
-copyNum.addEventListener('click', () => {
-    const num = copyNum.innerText;
+    navigator.clipboard.writeText(num);
 
-    navigator.clipboard.writeText(num).then(() => {
-        showToast("Number Copied ✅");
-    });
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        window.location.href = "bkash://";
+        
+        setTimeout(function () {
+            window.location.href = "https://www.bkash.com/app/";
+        }, 2000);
+    } else {
+        alert("Please open this on your mobile to use bKash app.");
+    }
 });
-
-function showToast(msg) {
-    toast.innerText = msg;
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2000);
-}
-
-// Open bKash (optional)
-function openBkash() {
-    window.location.href = "bkash://";
-}
