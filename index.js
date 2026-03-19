@@ -16,4 +16,4 @@ document.getElementById('copyNum').addEventListener('click', function () {
     }
 });
 
-//open bkash app 
+//open bkash apps
