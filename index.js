@@ -15,3 +15,5 @@ document.getElementById('copyNum').addEventListener('click', function () {
         alert("Please open this on your mobile to use bKash app.");
     }
 });
+
+//open bkash app 
