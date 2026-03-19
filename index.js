@@ -3,15 +3,15 @@ document.getElementById('copyNum').addEventListener('click', function () {
 
     navigator.clipboard.writeText(num);
 
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    alert("Number copied! Opening bKash...");
 
-    if (isMobile) {
-        window.location.href = "bkash://";
-        
-        setTimeout(function () {
+    const start = Date.now();
+
+    window.location.href = "bkash://";
+
+    setTimeout(function () {
+        if (Date.now() - start < 3000) {
             window.location.href = "https://www.bkash.com/app/";
-        }, 2000);
-    } else {
-        alert("Please open this on your mobile to use bKash app.");
-    }
+        }
+    }, 2000);
 });
